@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+X-Nemo-Application-Type=silica-qt5
+Icon=harbour-wunderssh
+Exec=sailfish-qml harbour-wunderssh
+Name=WunderSSH
+
+[X-Sailjail]
+Sandboxing=Disabled
