@@ -11,7 +11,7 @@ Page {
         var result = getServer(id);
 
         if (result.rows.length === 0) {
-            Notices.show("Error: server doesn't exist...", Notice.Short, Notice.Center);
+            Notices.show(qsTr("Error: server doesn't exist..."), Notice.Short, Notice.Center);
             return;
         }
 
@@ -28,7 +28,7 @@ Page {
             "color": result.rows.item(0).color
         };
 
-        pageHeader.title = 'Edit \"' + serverInfo.title + '\"'
+        pageHeader.title = qsTr("Edit") + ' \"' + serverInfo.title + '\"'
         titleField.text = serverInfo.title
         hostField.text = serverInfo.host
         usernameField.text = serverInfo.username
@@ -50,7 +50,8 @@ Page {
 
         PullDownMenu {
             MenuItem {
-                text: "Connect"
+                text: qsTr("Connect")
+                onClicked: connectToServer(page.id)
             }
         }
 
@@ -66,7 +67,7 @@ Page {
 
             TextField {
                 id: titleField
-                label: "Title"
+                label: qsTr("Title")
                 acceptableInput: text.length > 0
 
                 EnterKey.iconSource: "image://theme/icon-m-enter-next"
@@ -75,7 +76,7 @@ Page {
 
             TextField {
                 id: hostField
-                label: "Host"
+                label: qsTr("Host")
                 acceptableInput: text.length > 0
 
                 EnterKey.iconSource: "image://theme/icon-m-enter-next"
@@ -84,7 +85,7 @@ Page {
 
             TextField {
                 id: usernameField
-                label: "Username"
+                label: qsTr("Username")
                 acceptableInput: text.length > 0
 
                 EnterKey.iconSource: "image://theme/icon-m-enter-next"
@@ -93,7 +94,7 @@ Page {
 
             TextArea {
                 id: paramsField
-                label: "Params"
+                label: qsTr("Params")
                 EnterKey.iconSource: "image://theme/icon-m-enter-next"
                 EnterKey.onClicked: portField.focus = true
             }
@@ -103,35 +104,24 @@ Page {
                 property var pattern: new RegExp(/^\d+$/)
 
                 text: "22"
-                label: "Port"
+                label: qsTr("Port")
                 acceptableInput: pattern.test(text)
                 inputMethodHints: Qt.ImhDigitsOnly
             }
 
-//            ValueButton {
-//                anchors.horizontalCenter: parent.horizontalCenter
-//                label: "Pubkey"
-//                value: selectedPubkey
-//                onClicked: pageStack.animatorPush(filePickerPage)
-//            }
-
             ComboBox {
 
                 id: authMethodBox
-                label: "Authentication method"
+                label: qsTr("Authentication method")
                 width: page.width
 
                 menu: ContextMenu {
                     MenuItem {
-                        text: "Automatic"
+                        text: qsTr("Automatic")
                     }
 
-                    // MenuItem {
-                    //     text: "Custom pubkey file"
-                    // }
-
                     MenuItem {
-                        text: "Password"
+                        text: qsTr("Password")
                     }
                 }
 
@@ -140,7 +130,7 @@ Page {
             PasswordField {
                 id: passwordField
 
-                label: "Password"
+                label: qsTr("Password")
                 visible: authMethodBox.currentIndex == 1
             }
 
@@ -171,7 +161,7 @@ Page {
             Button {
                 id: saveButton
                 anchors.horizontalCenter: parent.horizontalCenter
-                text: "Save"
+                text: qsTr("Save")
 
                 onClicked: {
 

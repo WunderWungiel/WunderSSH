@@ -8,6 +8,8 @@ import "cover"
 
 ApplicationWindow {
 
+    id: applicationWindow
+
     function getDatabase() {
         return LocalStorage.openDatabaseSync("wunderssh", "1.0", "WunderSSH", 1000000);
     }
@@ -93,6 +95,14 @@ ApplicationWindow {
         )
     }
 
+    Python {
+        id: python
+        Component.onCompleted: {
+            addImportPath(Qt.resolvedUrl("python/."))
+            importModule("backend", function () {})
+        }
+    }
+
     function connectToServer(id) {
         var result = getServer(Number(id));
         var server = result.rows.item(0)
@@ -106,10 +116,13 @@ ApplicationWindow {
         python.call("backend.run_session", args)
     }
 
+    AboutPage {
+        id: aboutPage
+    }
+
     AddPage {
         id: addPage
     }
-    // property url addPage: Qt.resolvedUrl("AddPage.qml")
 
     MainPage {
         id: mainPage
@@ -123,12 +136,15 @@ ApplicationWindow {
         id: settingsPage
     }
 
-    Python {
-        id: python
-        Component.onCompleted: {
-            addImportPath(Qt.resolvedUrl("python/."))
-            importModule("backend", function () {})
-        }
+    Timer {
+        id: timer
+    }
+
+    function delay(delayTime, callback) {
+        timer.interval = delayTime;
+        timer.repeat = false;
+        timer.triggered.connect(callback);
+        timer.start();
     }
 
     CoverPage {

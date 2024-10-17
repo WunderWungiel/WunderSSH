@@ -7,7 +7,6 @@ Page {
     property alias listView:listView
     property alias busyIndicator:busyIndicator
 
-    // The effective value will be restricted by ApplicationWindow.allowedOrientations
     allowedOrientations: Orientation.All
 
     BusyIndicator {
@@ -27,16 +26,12 @@ Page {
         PullDownMenu {
 
             MenuItem {
-                text: "About"
+                text: qsTr("About")
+                onClicked: pageStack.animatorPush(aboutPage)
             }
 
             MenuItem {
-                text: "Settings"
-                onClicked: pageStack.animatorPush(settingsPage)
-            }
-
-            MenuItem {
-                text: "Add server"
+                text: qsTr("Add server")
                 onClicked: {
                     addPage.reset();
                     pageStack.animatorPush(addPage);
@@ -44,25 +39,27 @@ Page {
             }
         }
 
-        header: PageHeader { title: "WunderSSH" }
+        header: PageHeader {
+            title: "WunderSSH"
+        }
 
         delegate: ListItem {
             width: listView.width
 
             menu: ContextMenu {
                 MenuItem {
-                    text: "Connect"
+                    text: qsTr("Connect")
                     onClicked: connectToServer(model.id)
                 }
                 MenuItem {
-                    text: "Edit"
+                    text: qsTr("Edit")
                     onClicked: {
                         editPage.init(model.id);
                         pageStack.animatorPush(editPage, {"id": model.id})
                     }
                 }
                 MenuItem {
-                    text: "Delete"
+                    text: qsTr("Delete")
                     onClicked: remorseDelete(function () {
                         removeServer(model.id);
                         serversModel.update();
@@ -70,7 +67,15 @@ Page {
                 }
             }
 
-            onClicked: connectToServer(model.id)
+            onClicked: {
+                connectToServer(model.id);
+                enabled = false;
+                opacity = 0.5;
+                delay(1000, function () {
+                    enabled = true;
+                    opacity = 1;
+                })
+            }
 
             Row {
 
@@ -110,8 +115,8 @@ Page {
 
         ViewPlaceholder {
             enabled: listView.count == 0
-            text: "No servers configured yet..."
-            hintText: "Pull down to configure one!"
+            text: qsTr("No servers configured yet...")
+            hintText: qsTr("Pull down to configure one!")
         }
     }
 

@@ -25,12 +25,12 @@ Page {
             spacing: Theme.paddingSmall
 
             PageHeader {
-                title: "Add server"
+                title: qsTr("Add server")
             }
 
             TextField {
                 id: titleField
-                label: "Title"
+                label: qsTr("Title")
                 acceptableInput: text.length > 0
 
                 EnterKey.iconSource: "image://theme/icon-m-enter-next"
@@ -39,7 +39,7 @@ Page {
 
             TextField {
                 id: hostField
-                label: "Host"
+                label: qsTr("Host")
                 acceptableInput: text.length > 0
 
                 EnterKey.iconSource: "image://theme/icon-m-enter-next"
@@ -48,7 +48,7 @@ Page {
 
             TextField {
                 id: usernameField
-                label: "Username"
+                label: qsTr("Username")
                 acceptableInput: text.length > 0
 
                 EnterKey.iconSource: "image://theme/icon-m-enter-next"
@@ -57,7 +57,7 @@ Page {
 
             TextArea {
                 id: paramsField
-                label: "Params"
+                label: qsTr("Params")
 
                 EnterKey.iconSource: "image://theme/icon-m-enter-next"
                 EnterKey.onClicked: portField.focus = true
@@ -68,35 +68,24 @@ Page {
                 property var pattern: new RegExp(/^\d+$/)
 
                 text: "22"
-                label: "Port"
+                label: qsTr("Port")
                 acceptableInput: pattern.test(text)
                 inputMethodHints: Qt.ImhDigitsOnly
             }
 
-//            ValueButton {
-//                anchors.horizontalCenter: parent.horizontalCenter
-//                label: "Pubkey"
-//                value: selectedPubkey
-//                onClicked: pageStack.animatorPush(filePickerPage)
-//            }
-
             ComboBox {
 
                 id: authMethodBox
-                label: "Authentication method"
+                label: qsTr("Authentication method")
                 width: page.width
 
                 menu: ContextMenu {
                     MenuItem {
-                        text: "Automatic"
+                        text: qsTr("Automatic")
                     }
 
-                    // MenuItem {
-                    //     text: "Custom pubkey file"
-                    // }
-
                     MenuItem {
-                        text: "Password"
+                        text: qsTr("Password")
                     }
                 }
 
@@ -105,7 +94,7 @@ Page {
             PasswordField {
                 id: passwordField
 
-                label: "Password"
+                label: qsTr("Password")
                 visible: authMethodBox.currentIndex == 1
             }
 
@@ -136,7 +125,7 @@ Page {
             Button {
                 id: saveButton
                 anchors.horizontalCenter: parent.horizontalCenter
-                text: "Save"
+                text: qsTr("Save")
 
                 onClicked: {
 

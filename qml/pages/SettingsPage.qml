@@ -5,6 +5,8 @@ import Nemo.Configuration 1.0
 Page {
     id: page
 
+    property string version: "0.1-1"
+
     SilicaFlickable {
         anchors.fill: parent
         contentHeight: column.height
@@ -15,13 +17,14 @@ Page {
             spacing: Theme.paddingMedium
 
             PageHeader {
-                title: "Settings"
+                title: qsTr("Settings")
             }
 
             Button {
                 id: saveButton
-                text: "Save"
+                text: qsTr("Save")
                 anchors.horizontalCenter: parent.horizontalCenter
+                onClicked: pageStack.pop()
             }
 
         }
