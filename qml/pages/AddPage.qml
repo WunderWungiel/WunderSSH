@@ -156,7 +156,6 @@ Page {
                         titleField.text = dlg.selectedHost.userName ? (dlg.selectedHost.userName + "@" + dlg.selectedHost.hostName) : dlg.selectedHost.hostName
                         hostField.text = dlg.selectedHost.hostName
                         usernameField.text = dlg.selectedHost.userName ? dlg.selectedHost.userName : ""
-                        portField.text = dlg.selectedHost.port ? dlg.selectedHost.port : 22
                     })
                 }
             }
@@ -190,10 +189,7 @@ Page {
                     property bool selected: index == knownHostsDialog.selectedIdx
                     highlighted: down || selected
 
-                    onClicked: {
-                        knownHostsDialog.selectedIdx = selected ? -1 : index
-                        knownHostsDialog.selectedHost = new Object(hostsModel.get(index))
-                    }
+                    onClicked: knownHostsDialog.selectedIdx = selected ? -1 : index
 
                     Column {
                         anchors.left: parent.left
@@ -241,7 +237,7 @@ Page {
                                 for (var i=1; i<=10; i++) {
                                     const ln = arr[idx+i].trim()
                                     if (!ln) break                         // end of file
-                                    if (/^(Host|Match)\s+/.test(ln)) break // next section reached
+                                    if (/^([Hh]ost|[Mm]atch)\s+/.test(ln)) break // next section reached
                                     const user = ln.match(/^[Uu]ser\s+(\w+)$/)
                                     if (user && user[1]) {
                                         o["userName"] = user[1]
