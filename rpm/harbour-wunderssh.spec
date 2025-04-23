@@ -1,7 +1,7 @@
 Name:       harbour-wunderssh
 
 Summary:    SSH servers manager
-Version:    0.1
+Version:    0.3
 Release:    1
 License:    LICENSE
 BuildArch:  noarch
