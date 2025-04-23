@@ -58,6 +58,7 @@
     </message>
     <message>
         <location filename="../qml/pages/AddPage.qml" line="51"/>
+        <location filename="../qml/pages/AddPage.qml" line="210"/>
         <source>Username</source>
         <translation>Username</translation>
     </message>
@@ -77,20 +78,50 @@
         <translation>Authentifizierung</translation>
     </message>
     <message>
-        <location filename="../qml/pages/AddPage.qml" line="84"/>
+        <location filename="../qml/pages/AddPage.qml" line="83"/>
         <source>Automatic</source>
         <translation>automatisch</translation>
     </message>
     <message>
-        <location filename="../qml/pages/AddPage.qml" line="88"/>
-        <location filename="../qml/pages/AddPage.qml" line="97"/>
+        <location filename="../qml/pages/AddPage.qml" line="87"/>
+        <location filename="../qml/pages/AddPage.qml" line="96"/>
         <source>Password</source>
         <translation>Kennwort</translation>
     </message>
     <message>
-        <location filename="../qml/pages/AddPage.qml" line="128"/>
+        <location filename="../qml/pages/AddPage.qml" line="127"/>
         <source>Save</source>
         <translation>Speichern</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/AddPage.qml" line="152"/>
+        <source>Import from ~/.ssh</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/AddPage.qml" line="184"/>
+        <source>From: %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/AddPage.qml" line="218"/>
+        <source>No hosts found.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/AddPage.qml" line="219"/>
+        <source>Your ~/.ssh directory contains no files to read hosts from.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/AddPage.qml" line="236"/>
+        <source>SSH Config</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/AddPage.qml" line="272"/>
+        <source>Known Hosts</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

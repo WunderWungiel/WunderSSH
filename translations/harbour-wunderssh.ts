@@ -74,6 +74,30 @@
         <source>Save</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Import from ~/.ssh</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>From: %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No hosts found.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Your ~/.ssh directory contains no files to read hosts from.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>SSH Config</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Known Hosts</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>CoverPage</name>
