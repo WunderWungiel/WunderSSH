@@ -58,7 +58,7 @@
     </message>
     <message>
         <location filename="../qml/pages/AddPage.qml" line="51"/>
-        <location filename="../qml/pages/AddPage.qml" line="210"/>
+        <location filename="../qml/pages/AddPage.qml" line="206"/>
         <source>Username</source>
         <translation>Username</translation>
     </message>
@@ -96,32 +96,32 @@
     <message>
         <location filename="../qml/pages/AddPage.qml" line="152"/>
         <source>Import from ~/.ssh</source>
-        <translation type="unfinished"></translation>
+        <translation>Importiere aus ~/.ssh</translation>
     </message>
     <message>
-        <location filename="../qml/pages/AddPage.qml" line="184"/>
+        <location filename="../qml/pages/AddPage.qml" line="183"/>
         <source>From: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Quelle: %1</translation>
     </message>
     <message>
-        <location filename="../qml/pages/AddPage.qml" line="218"/>
+        <location filename="../qml/pages/AddPage.qml" line="214"/>
         <source>No hosts found.</source>
-        <translation type="unfinished"></translation>
+        <translation>Keine Server gefunden.</translation>
     </message>
     <message>
-        <location filename="../qml/pages/AddPage.qml" line="219"/>
+        <location filename="../qml/pages/AddPage.qml" line="215"/>
         <source>Your ~/.ssh directory contains no files to read hosts from.</source>
-        <translation type="unfinished"></translation>
+        <translation>Dein ~/.ssh Verzeichnis enthält keine Dateien aus denen man Server auslesen kann.</translation>
     </message>
     <message>
-        <location filename="../qml/pages/AddPage.qml" line="236"/>
+        <location filename="../qml/pages/AddPage.qml" line="232"/>
         <source>SSH Config</source>
-        <translation type="unfinished"></translation>
+        <translation>SSH-Config</translation>
     </message>
     <message>
-        <location filename="../qml/pages/AddPage.qml" line="272"/>
+        <location filename="../qml/pages/AddPage.qml" line="268"/>
         <source>Known Hosts</source>
-        <translation type="unfinished"></translation>
+        <translation>Known Hosts</translation>
     </message>
 </context>
 <context>
