@@ -5,7 +5,7 @@ import Nemo.Configuration 1.0
 Page {
     id: page
 
-    property string version: "0.1-1"
+    property string version: "0.3-1"
 
     SilicaFlickable {
         anchors.fill: parent

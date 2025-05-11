@@ -76,27 +76,27 @@
     </message>
     <message>
         <source>Import from ~/.ssh</source>
-        <translation type="unfinished"></translation>
+        <translation>Importuj z ~/.ssh</translation>
     </message>
     <message>
         <source>From: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Z: %1</translation>
     </message>
     <message>
         <source>No hosts found.</source>
-        <translation type="unfinished"></translation>
+        <translation>Nie znaleziono hostów.</translation>
     </message>
     <message>
         <source>Your ~/.ssh directory contains no files to read hosts from.</source>
-        <translation type="unfinished"></translation>
+        <translation>Twój katalog ~/.ssh nie zawiera plików z hostami.</translation>
     </message>
     <message>
         <source>SSH Config</source>
-        <translation type="unfinished"></translation>
+        <translation>Konfiguracja SSH</translation>
     </message>
     <message>
         <source>Known Hosts</source>
-        <translation type="unfinished"></translation>
+        <translation>Znane hosty</translation>
     </message>
 </context>
 <context>
